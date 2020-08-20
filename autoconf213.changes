@@ -1,0 +1,18 @@
+* Thu Aug 20 2020 Matti Kosola <matti.kosola@jolla.com> - 2.13
+- Add autoconf 2.13 to git repository. JB#49468
+
+* Thu Jul 19 2012 Stephan Kulow <coolo@suse.com> - 2.13
+- buildrequire makeinfo
+
+* Tue Dec 20 2011 Stepjan Kulow <coolo@suse.com> - 2.13
+- remove call to suse_update_config (very old work around)
+
+* Sat Sep 17 2011 Jan Engelhardt <jengelh@medozas.de> - 2.13
+- Remove redundant tags/sections from specfile
+- Use %_smp_mflags for parallel build
+
+* Fri Dec 18 2009 Jan Engelhardt <jengelh@medozas.de> - 2.13
+- enable parallel building
+
+* Fri Aug 22 2008 Wolfgang Rosenauer <wr@rosenauer.org> - 2.13
+- initial autoconf 2.13 package based on Fedora's package

@@ -1,0 +1,31 @@
+diff --git a/Makefile.in b/Makefile.in
+index a6c94d4..2c9309e 100644
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -82,7 +82,7 @@ editsh = sed -e 's,@''datadir''@,$(acdatadir),g' -e \
+ 	-e 's,@''SHELL''@,$(SHELL),g'
+ editpl = sed -e 's,@''datadir''@,$(acdatadir),g' -e 's,@''PERL''@,$(PERL),g'
+ 
+-all: ${SCRIPTS} ${M4FROZEN} info
++all: ${SCRIPTS} ${M4FROZEN}
+ 
+ .SUFFIXES:
+ .SUFFIXES: .sh .pl .m4 .m4f
+@@ -110,14 +110,14 @@ info: autoconf.info @standards_info@ INSTALL
+ 
+ # Use --no-split to avoid creating filenames > 14 chars.
+ autoconf.info: autoconf.texi install.texi
+-	$(MAKEINFO) -I$(srcdir) $(srcdir)/autoconf.texi --no-split --output=$@
++	#$(MAKEINFO) -I$(srcdir) $(srcdir)/autoconf.texi --no-split --output=$@
+ 
+ INSTALL: install.texi
+-	$(MAKEINFO) -I$(srcdir) $(srcdir)/install.texi --output=$@ \
++	#$(MAKEINFO) -I$(srcdir) $(srcdir)/install.texi --output=$@ \
+ 	--no-headers --no-validate
+ 
+ standards.info: standards.texi make-stds.texi
+-	$(MAKEINFO) -I$(srcdir) $(srcdir)/standards.texi --no-split --output=$@
++	#$(MAKEINFO) -I$(srcdir) $(srcdir)/standards.texi --no-split --output=$@
+ 
+ dvi: autoconf.dvi @standards_dvi@
+ 
