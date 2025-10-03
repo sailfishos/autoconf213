@@ -23,10 +23,9 @@ Requires:       m4 >= 1.1
 Requires:       mktemp
 Requires:       perl
 Version:        2.13
-Release:        18.3
+Release:        2
 Summary:        A GNU Tool for Automatically Configuring Source Code
 License:        GPL-2.0+
-Group:          Development/Tools/Building
 BuildArch:      noarch
 Source:         autoconf-%{version}.tar.bz2
 Patch0:         autoconf-2.12-race.patch
@@ -56,27 +55,15 @@ be configuring software with an autoconf-generated script; autoconf is
 only required for the generation of the scripts, not their use.
 
 %prep
-%setup -n autoconf-%{version} -q
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
-%patch3 -p1
-%patch4 -p1
-%patch5 -p1
-%patch6 -p1
-%patch7 -p1
-%patch8 -p1
-%patch9 -p1
-%patch10 -p1
-%patch11 -p1
+%autosetup -p1 -n autoconf-%{version}
 
 %build
 ./configure --prefix=%{_prefix} --infodir=%{_infodir} --mandir=%{_mandir} \
             --program-suffix=-2.13
-make %{?_smp_mflags}
+%make_build
 
 %install
-%makeinstall
+%make_install
 # We don't want to include the standards.info stuff in the package,
 # because it comes from binutils...
 rm -rf ${RPM_BUILD_ROOT}%{_infodir}
@@ -88,7 +75,6 @@ rm -rf ${RPM_BUILD_ROOT}%{_infodir}
 %install_info_delete --info-dir=%{_infodir} %{_infodir}/autoconf2.13.info.gz
 
 %files
-%defattr(-,root,root)
 %doc AUTHORS COPYING NEWS README TODO
 %{_prefix}/bin/*
 %{_prefix}/share/autoconf-2.13

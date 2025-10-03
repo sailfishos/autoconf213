@@ -1,3 +1,6 @@
+* Fri Oct 05 2025 Matti Lehtimäki <matti.lehtimaki@jolla.com> - 2.13-2
+- Use %autosetup instead of %patchN. JB#63645
+
 * Thu Aug 20 2020 Matti Kosola <matti.kosola@jolla.com> - 2.13
 - Add autoconf 2.13 to git repository. JB#49468
 
